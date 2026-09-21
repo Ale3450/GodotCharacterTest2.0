@@ -29,13 +29,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("izq") and Input.is_action_just_pressed("teleport"):
 		position.x +=-200
 
-	if dentro_del_area=true:
-		 $AnimatedSprite2D.play("die")
+	if dentro_del_area==true:
+		$AnimatedSprite2D.play("die")
 
 func _on_area_muerte_body_entered(body: Node2D) -> void:
 	print ("Entraste a la muerte")
 	dentro_del_area=true
-
 
 func _on_area_noMuerte_body_exited(body: Node2D) -> void:
 	print ("Saliste de la muerte")
